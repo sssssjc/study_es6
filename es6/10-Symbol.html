@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Symbol是唯一的
+        //创建Symbol
+        let s = Symbol();
+        console.log(s,typeof s);
+        let s2 = Symbol('尚硅谷'); //这个字符串是描述的作用
+        let s3 = Symbol('尚硅谷'); //仅仅是标识的作用
+        console.log(s2);
+        console.log(s2===s3); //false
+
+        //Symbol.for创建
+        //上面Symbol() 是函数创建 这里Symbol. 是对象
+        let s4 = Symbol.for('尚硅谷');
+        //通过这个方式创建是可以根据描述得到唯一的Symbol值的
+        let s5 = Symbol.for('尚硅谷');
+        console.log(s4===s5);//true
+
+        //不能与其他数据进行运算
+        // let result = s + 100;
+        // let result = s> 100;
+        // let result = s + s; //都不行
+
+        // USNOB you are so niubility
+        //u undefined
+        //s string symbol
+        //o object
+        //null number
+        //b boolean
+        //bigint
+
+
+    </script>
+</body>
+</html>
