@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //ES6 允许按照一定模式从数组和对象中提取值，对变量进行赋值
+        //这被称作解构赋值
+        //1.数组的解构
+        const flowers = ['牡丹','向日葵','杜鹃'];
+        let [mudan,xiangrikui,dujuan] = flowers;
+        console.log(mudan);
+        console.log(xiangrikui);
+        console.log(dujuan);
+
+        //2.对象的解构(用的较多)
+        const jc = {
+            name: 'jc',
+            age: '不详',
+            ganfan: function(){
+                console.log('干饭');
+            }
+        }
+        let {name,age,ganfan} = jc;
+        console.log(name);
+        console.log(age);
+        console.log(ganfan);
+        ganfan();
+
+        //可以只赋值数组或对象中的一部分，不必全部赋值
+        const apple = {
+            name: '苹果',
+            color: '青色',
+            chengshu: function(){
+                console.log('成熟变红色');
+            }
+        }
+        let {chengshu} = apple;
+        chengshu();
+
+
+
+    </script>
+
+</body>
+</html>

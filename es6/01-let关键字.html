@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明变量
+        let a;
+        let b,c;
+
+        let d = 100;
+        let e = '123',f = 123.3;
+
+        //注意事项
+        //1.变量不能重复声明(var关键字可以)
+        /*
+        let aa = 'aa';
+        let aa = 123 ;
+        Uncaught SyntaxError: redeclaration of let aa
+        */
+
+        //2.块级作用域  之前的有 全局，函数，eval 作用域
+        /*
+        {
+            let g = 123;
+        }
+        console.log(g); //Uncaught ReferenceError: g is not defined
+        */
+
+        //3.不存在变量提升 (var关键字声明的变量 在编译时会先收集) 
+        //var song=123;  (行35)
+        //相当于var song;(行1) song = 123;(行35)
+        /*
+        console.log(song); //undefined
+        var song = 'song';
+        console.log(sing);
+        let sing = 'sing'; //Uncaught ReferenceError: can't access lexical declaration 'sing' before initialization
+        */
+
+        //4.不影响作用域链
+        {
+            let study = 'javascript';
+            function fn(){
+                console.log(study);
+            }
+            fn();
+        }
+        
+    </script>
+</body>
+</html>
