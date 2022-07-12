@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生成器就是一个特殊的函数 用来生成迭代器
+        // 异步编程 之前是纯回调函数 node fs ajax mongdb
+        //函数代码的分隔符【yield】 不加yield语句 next()就是全部执行完成了
+        // function* gen(){
+        //     // console.log(111);
+        //     yield '一只没有耳朵';
+        //     // console.log(222);
+        //     yield '一只没有尾巴';
+        //     // console.log(333);
+        //     yield '真奇怪';
+        //     // console.log(444);
+        // }
+
+        // let iterator = gen();
+        // console.log(iterator);
+
+        // console.log(iterator.next()); 
+        // console.log(iterator.next()); 
+        // console.log(iterator.next()); 
+        // console.log(iterator.next()); 
+
+        //遍历
+        // for (const v of gen()) {
+        //     console.log(v);
+        // }
+
+
+        //生成器函数参数
+        function* gen(arg){
+            console.log(arg);
+            //yield后面的表达式的值为value
+            //next()执行代码，返回object{value:1111,done:false}
+            //如果1111是一个函数，return返回1111,那么value也为1111
+            const b = yield 1111;  //第一次next()执行这里，后面的1111也会执行
+            console.log(b);
+            //yield整体的值为形参，实参为next()中的值
+            const c = yield 2222;
+            console.log(c);
+            const d= yield 3333;
+            console.log(d);
+        }
+        //执行获取迭代器对象
+        let iterator = gen('AAA');
+        //
+        console.log(iterator.next());
+        //next方法可以传入实参
+        console.log(iterator.next('BBB'));
+        console.log(iterator.next('CCC'));
+        console.log(iterator.next('DDD'));
+
+    </script>
+
+    
+</body>
+</html>

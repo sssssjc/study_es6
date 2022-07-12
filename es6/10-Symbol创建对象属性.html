@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //向对象中添加方法up down
+        let game = {
+            up(){
+                console.log('up...');
+            },
+            down(){
+                console.log('down,,,');
+            }
+        }
+
+        //声明一个对象
+        let methods = {
+            up: Symbol(), 
+            down: Symbol()
+        }
+
+        game[methods.up] = function(){
+            console.log('我可以改变形状');
+        }
+
+        game[methods.down] = function(){
+            console.log('我可以快速下降!');
+        }
+
+        // game[methods.up]();
+
+        let zibao = Symbol['zibao'];
+        let youxi = {
+            name: '狼人杀',
+            //通过Symbol对象创建 ，值是根据say得到的唯一的，可以直接通过symbol调用
+            [Symbol.for('say')]: function(){
+                console.log('我可以发言');
+            },
+            //这样创建语法才能通过 属性名不加[] ，语法不通过
+            //而通过函数创建 symbol值是唯一的，在创建的时候应该用变量保存起来
+            //后续通过变量调用
+            /*
+                [zibao]:fun...
+            */
+            [Symbol('zibao')]: function(){
+                console.log('我可以自爆');
+            }
+        }
+
+        console.log(youxi);
+        youxi[Symbol.for('say')]();
+        
+
+
+
+    </script>
+</body>
+</html>l
