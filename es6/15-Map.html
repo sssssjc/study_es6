@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //声明Map
+        let m = new Map();
+
+        //添加元素
+        m.set('name','jc');
+        m.set('eat',function(){
+            console.log('恰饭');
+        });
+        let key={
+            num:'数字'
+        };
+        m.set(key,[11,22,3323]);
+        console.log(m);
+
+        //size
+        console.log(m.size);
+
+        //删除
+        m.delete(key);
+        console.log(m);
+
+        //获取
+        console.log(m.get('eat'));
+
+        //清空
+        // m.clear();
+
+        //迭代器
+        for (const v of m) {
+            console.log(v);
+        }
+    </script>
+    
+</body>
+</html>

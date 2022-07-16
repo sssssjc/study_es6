@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //手机
+        // function Phone(brand,price){
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+
+        // //添加方法
+        // Phone.prototype.call=function(){
+        //     console.log('我可以打电话！');
+        // }
+
+        // //实例化对象
+        // let Huawei = new Phone('华为',5999);
+        // Huawei.call();
+        // console.log(Huawei);
+
+        //class
+        // class Phone{
+        //     //构造方法
+        //     constructor(brand,price){
+        //         this.brand=brand;
+        //         this.price=price;
+        //     }
+
+        //     //方法必须使用改语法，不能使用ES5的对象方法形式
+        //     call(){
+        //         console.log('我可以打电话');
+        //     }
+        // }
+
+        // let onePlus = new Phone('1+',1999);
+        // console.log(onePlus);
+
+
+        //静态成员
+        // function Phone(){
+
+        // }
+
+        // Phone.name = '手机';
+        // Phone.change = function(){
+        //     console.log('我可以改变世界');
+        // };
+        // Phone.prototype.size = '5.5inch'
+
+        // let nokia = new Phone();
+
+        // console.log(nokia.name);
+        // console.log(nokia.change);
+        // console.log(Phone.change);
+        // console.log(Phone.size);
+        // console.log(nokia.size);
+        // class Phone{
+        //     //静态属性
+        //     static name = '手机';
+        //     static change(){
+        //         console.log('改变');
+        //     }
+        // };
+        // let nokia = new Phone();
+        // console.log(nokia.change);
+        // console.log(Phone.name);
+
+        //对象继承
+        //手机
+        function Phone(brand,price){
+            this.brand=brand;
+            this.price=price;
+        };
+        Phone.prototype.call=function(){
+            console.log('打电话');
+        };
+        //智能手机
+        function SmartPhone(brand,price,color,size){
+            Phone.call(this,brand,price);
+            this.color = color;
+            this.size = size;
+        }
+        //设置子级构造函数的原型
+        SmartPhone.prototype = new Phone();
+        SmartPhone.prototype.construtor = SmartPhone;
+
+        //声明子类的方法
+        SmartPhone.prototype.photo=function(){
+            console.log('拍照');
+        };
+
+        const chuizi = new SmartPhone('锤子',2499,'黑色','5.5inch');
+        console.log(chuizi);
+
+    </script>
+    
+    
+</body>
+</html>
