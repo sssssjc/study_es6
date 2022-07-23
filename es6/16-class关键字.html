@@ -71,33 +71,71 @@
         // console.log(nokia.change);
         // console.log(Phone.name);
 
-        //对象继承
+        //ES5继承
         //手机
-        function Phone(brand,price){
-            this.brand=brand;
-            this.price=price;
-        };
-        Phone.prototype.call=function(){
-            console.log('打电话');
-        };
-        //智能手机
-        function SmartPhone(brand,price,color,size){
-            Phone.call(this,brand,price);
-            this.color = color;
-            this.size = size;
+        // function Phone(brand,price){
+        //     this.brand=brand;
+        //     this.price=price;
+        // };
+        // Phone.prototype.call=function(){
+        //     console.log('打电话');
+        // };
+        // //智能手机
+        // function SmartPhone(brand,price,color,size){
+        //     Phone.call(this,brand,price);
+        //     this.color = color;
+        //     this.size = size;
+        // }
+        // //设置子级构造函数的原型
+        // SmartPhone.prototype = new Phone();
+        // SmartPhone.prototype.construtor = SmartPhone;
+
+        // //声明子类的方法
+        // SmartPhone.prototype.photo=function(){
+        //     console.log('拍照');
+        // };
+
+        // const chuizi = new SmartPhone('锤子',2499,'黑色','5.5inch');
+        // console.log(chuizi);
+
+        class Phone{
+            //构造方法
+            constructor(brand,price){
+                this.brand = brand;
+                this.price = price;
+            }
+
+            //父类的成员属性
+            call(){
+                console.log('打电话');
+            }
         }
-        //设置子级构造函数的原型
-        SmartPhone.prototype = new Phone();
-        SmartPhone.prototype.construtor = SmartPhone;
+        class SmartPhone extends Phone{
+            //构造方法
+            constructor(brand,price,color,size){
+                super(brand,price);
+                this.color=color;
+                this.size=price;
+            }
 
-        //声明子类的方法
-        SmartPhone.prototype.photo=function(){
-            console.log('拍照');
-        };
+            photo(){
+                console.log('拍照');
+            }
+            playGame(){
+                console.log('打游戏');
+            }
+            //重写父类方法
+            call(){
+                super.call();
+                console.log('视频通话');
+            }
+        }
 
-        const chuizi = new SmartPhone('锤子',2499,'黑色','5.5inch');
-        console.log(chuizi);
-
+        let phone = new SmartPhone('xiaomi',799,'黑色','4,7inch');
+        console.log(phone);
+        phone.call();
+        phone.photo();
+        phone.playGame();
     </script>
     
     

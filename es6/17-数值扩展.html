@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0. Number.EPSILON 是 JavaScript 表示的最小精度
+        //EPSILON 属性的值接近于 2.220446049250313e-16
+        console.log(Number.EPSILON);
+        console.log(0.1+0.2 === 0.3);
+        function equal(a, b){
+            if(Math.abs(a-b) < Number.EPSILON){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        console.log(equal(0.1+0.2,0.3));
+
+        //1. 二进制和八进制
+
+        //2. Number.isFinite 检测一个数值是否为有限数
+
+        //3. Number.isNaN 检测一个数值是否为NaN
+
+        //4. Number.parseInt Number.parseFloat 字符串转整数
+
+        //5. Math.trunc 将数字的小数部分抹掉
+
+        //6. Math.sign 判断一个数到底为正数 负数 还是 零
+
+
+    </script>
+</body>
+</html>
