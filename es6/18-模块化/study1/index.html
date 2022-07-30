@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 模块化</title>
+</head>
+<body>
+    <!-- 这个模块化需要在服务器环境才能运行 -->
+    <script type="module">
+        //1. 通用的导入方式
+        //引入 m1.js 模块内容
+        import * as m1 from "./m1.js";
+        //引入 m2.js 模块内容
+        import * as m2 from "./m2.js";
+        //引入 m3.js 模块内容
+        import * as m3 from './m3.js';
+        console.log(m1);
+        console.log(m2);
+        console.log(m3);
+        m3.default.dd();
+
+        //2. 解构赋值形式
+        import {name,ff} from './m1.js';
+        import {name as name2,dd} from './m2.js';
+        import {default as default3} from './m3.js';
+        console.log(name);
+        ff();
+        console.log(name2);
+        dd();
+
+        //3. 简便形式 只是针对默认暴露
+        import m333 from './m3.js';
+        console.log(m333);
+    </script>
+    
+</body>
+</html>

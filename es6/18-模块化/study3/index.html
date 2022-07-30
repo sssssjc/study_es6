@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 模块化</title>
+</head>
+<body>
+    <!-- 不是所有的浏览器都支持js的模块化引入 -->
+    <!-- 使用babel 做兼容性 -->
+    <!-- https://www.babeljs.cn/ -->
+    <!-- 
+        1. 安装工具 babel-cli babel-preset-env browserify(webpack)
+        2. 安装命令 转换命令
+        npm init -yes
+        npm i babel-cli babel-preset-env browserify -D
+        npx babel ./js -d  dist/js --preset=babel-preset-env
+        3. 打包
+        npx browersify dist/js/app.js -o dist/bundle.js
+        
+     -->
+     <script src="dist/bundle.js"></script>
+
+</body>
+</html>
